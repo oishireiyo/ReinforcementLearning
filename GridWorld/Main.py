@@ -5,7 +5,7 @@ from Agent import QLearningAgent
 from Environment import GridWorld
 
 # Constants
-NB_EPISODE = 20
+NB_EPISODE = 50
 EPSILON = 0.1
 ALPHA = 0.1
 GAMMA = 0.9
