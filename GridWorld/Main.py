@@ -5,7 +5,7 @@ from Agent import QLearningAgent
 from Environment import GridWorld
 
 # Constants
-NB_EPISODE = 50
+NB_EPISODE = 100
 EPSILON = 0.1
 ALPHA = 0.1
 GAMMA = 0.9
@@ -37,7 +37,16 @@ if __name__ == '__main__':
         is_end_episode = False
 
     pprint.pprint(agent.q_values)
-        
+
+    # The best policy
+    q_values = agent.q_values
+    is_end_episode = False
+    state = ini_state
+    while not is_end_episode:
+        action = np.argmax(q_values[str(state)])
+        print(action)
+        state, reward, is_end_episode = grid_env.step(action)
+
     plt.plot(np.arange(NB_EPISODE), rewards)
     plt.xlabel('episode')
     plt.ylabel('reward')

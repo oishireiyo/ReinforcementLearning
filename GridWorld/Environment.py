@@ -85,7 +85,7 @@ class GridWorld:
 
     def _compute_reward(self, x, y):
         if self.map[y][x] == self.filed_type['N']:
-            return 0
+            return -1
         elif self.map[y][x] == self.filed_type['G']:
             return 100
         elif self.map[y][x] == self.filed_type['T']:
